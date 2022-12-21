@@ -15,6 +15,6 @@ For support join my discord here: https://discord.gg/scully
 
 add_ace group.mba mba allow
 
-**If not using a discord ace perms resource add the following also, replace <identifier> with your chosen identifier. For example, mine is discord:530698981920079882**
+**If not using a discord ace perms resource add the following also, replace 'identifier' with your chosen identifier. For example, mine is discord:530698981920079882**
 
-add_principal identifier.<identifier> group.mba
+add_principal identifier.'identifier' group.mba
