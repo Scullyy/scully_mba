@@ -4,7 +4,7 @@ local function setMBA(entitySet)
     local interior = GetInteriorAtCoords(-324.22, -1968.49, 20.60)
 
     if interior ~= 0 then
-        local removeSets, newEntitySet = Config.removals, Config[entitySet]
+        local removeSets, newEntitySet = Config.Sets.removals, Config.Sets[entitySet]
 
         for i = 1, #removeSets do
             DeactivateInteriorEntitySet(interior, removeSets[i])
