@@ -3,7 +3,7 @@ CreateThread(function()
 end)
 
 RegisterCommand('setmba', function(source, args)
-    if IsPlayerAceAllowed(source, 'group.mba') then
+    if IsPlayerAceAllowed(source, 'mba') then
         local mba = args[1]
 
         if not mba or not Config.Sets[mba] or mba == 'removals' then return end

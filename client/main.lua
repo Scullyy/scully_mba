@@ -10,6 +10,8 @@ local function setMBA(entitySet)
             DeactivateInteriorEntitySet(interior, removeSets[i])
         end
 
+        Wait(100)
+
         for i = 1, #newEntitySet do
             ActivateInteriorEntitySet(interior, newEntitySet[i])
         end
