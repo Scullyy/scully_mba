@@ -1,4 +1,6 @@
 Config = {
+    Command = 'setmba', -- The command to use to change the entity set.
+    Permission = 'mba', -- The permission required to use the command.
     Default = 'none', -- The default entity set for when your server restarts.
     Sets = {
         basketball = {'mba_tribune', 'mba_tarps', 'mba_basketball', 'mba_jumbotron'},
