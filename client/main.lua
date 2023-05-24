@@ -5,6 +5,7 @@ local function setMBA(entitySet)
 
     if interior ~= 0 then
         local removeSets, newEntitySet = Config.Sets.removals, Config.Sets[entitySet]
+        local removeExteriors, newExteriorSet = Config.Exteriors.removals, Config.Exteriors[entitySet]
 
         for i = 1, #removeSets do
             DeactivateInteriorEntitySet(interior, removeSets[i])
@@ -17,6 +18,18 @@ local function setMBA(entitySet)
         end
 
         RefreshInterior(interior)
+
+        Wait(100)
+
+        for i = 1, #removeExteriors do
+            RemoveIpl(removeExteriors[i])
+        end
+
+        Wait(100)
+
+        for i = 1, #newExteriorSet do
+            RequestIpl(newExteriorSet[i])
+        end
     end
 end
 
