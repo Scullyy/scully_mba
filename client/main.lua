@@ -17,6 +17,18 @@ local function setMBA(entitySet)
         end
 
         RefreshInterior(interior)
+
+        Wait(100)
+
+        for i = 1, #removeExteriors do
+            RemoveIpl(removeExteriors[i])
+        end
+
+        Wait(100)
+
+        for i = 1, #newExteriorSet do
+            RequestIpl(newExteriorSet[i])
+        end
     end
 end
 
