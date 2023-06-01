@@ -4,16 +4,25 @@ local function setMBA(entitySet)
     local interior = GetInteriorAtCoords(-324.22, -1968.49, 20.60)
 
     if interior ~= 0 then
-        local removeSets, newEntitySet = Config.Sets.removals, Config.Sets[entitySet]
+        local removeSets, newEntitySet = Config.Removals.interiors, Config.Sets[entitySet]
+        local removeSigns, newSign = Config.Removals.signs, Config.Signs[entitySet]
 
         for i = 1, #removeSets do
             DeactivateInteriorEntitySet(interior, removeSets[i])
+        end
+
+        for i = 1, #removeSigns do
+            RemoveIpl(removeSigns[i])
         end
 
         Wait(100)
 
         for i = 1, #newEntitySet do
             ActivateInteriorEntitySet(interior, newEntitySet[i])
+        end
+
+        if newSign then
+            RequestIpl(newSign)
         end
 
         RefreshInterior(interior)
